@@ -60,24 +60,35 @@ return true;
 	  }
 	
 	boolean isSquare(int a) {
-		for(int i = 0; i<a; i++) {
-			
+		for(int i = 0; i<=a; i++) {
+			if(i*i==a){
+				return true;
+			}
 		}
+		return false;
 	}
 
-//	@Test
-//	  public void CubeTest() {
-//
-//	    assertTrue(isCube(27));
-//	    assertTrue(isCube(216));
-//	    assertTrue(isCube(729));
-//	    assertTrue(isCube(1));
-//	    assertFalse(isCube(3));
-//	    assertFalse(isCube(22));
-//	    assertFalse(isCube(143));
-//
-//	  }
+	@Test
+	  public void CubeTest() {
 
+	    assertTrue(isCube(27));
+	    assertTrue(isCube(216));
+	    assertTrue(isCube(729));
+	    assertTrue(isCube(1));
+	    assertFalse(isCube(3));
+	    assertFalse(isCube(22));
+	    assertFalse(isCube(143));
+
+	  }
+	boolean isCube(int b) {
+		for(int i = 0; i<=b; i++) {
+			int c = i*i;
+			if(c*i==b){
+				return true;
+			}
+		}
+		return false;
+	}
 
 
 }
