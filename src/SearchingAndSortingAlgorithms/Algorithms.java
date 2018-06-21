@@ -47,15 +47,37 @@ public class Algorithms {
 		return LongestWord;
 	}
 
-	public static boolean containsSOS(List<String> message1) {
+	public static boolean containsSOS(List<String> message) {
 
-		for (int i = 0; i < message1.size(); i++) {
-			if (message1.get(i).equalsIgnoreCase("... --- ...")) {
+		for (int i = 0; i < message.size(); i++) {
+			if (message.get(i).contains("... --- ...")) {
 				return true;
 			}
 			
 		}
 		// Add other methods here
 			return false;
+	}
+
+
+
+	public static List<Double> sortScores(List<Double> results) {
+		Double temp = 0.0;
+		int numSwaps = 1;
+		while(numSwaps > 0) {
+			numSwaps = 0;
+		for(int i = 0; i < results.size()-1; i++) {
+			if(results.get(i)>results.get(i+1)) {
+				numSwaps++;
+				temp=results.get(i);
+				results.set(i, results.get(i)+1);
+				results.set(i+1, temp);
+			}
+		}
+		}
+		System.out.println(results);
+		return results;
+		// TODO Auto-generated method stub
+		
 	}
 }
