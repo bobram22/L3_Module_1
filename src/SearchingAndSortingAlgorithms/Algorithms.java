@@ -53,31 +53,46 @@ public class Algorithms {
 			if (message.get(i).contains("... --- ...")) {
 				return true;
 			}
-			
+
 		}
 		// Add other methods here
-			return false;
+		return false;
 	}
-
-
 
 	public static List<Double> sortScores(List<Double> results) {
 		Double temp = 0.0;
 		int numSwaps = 1;
-		while(numSwaps > 0) {
+		while (numSwaps > 0) {
 			numSwaps = 0;
-		for(int i = 0; i < results.size()-1; i++) {
-			if(results.get(i)>results.get(i+1)) {
-				numSwaps++;
-				temp=results.get(i);
-				results.set(i, results.get(i)+1);
-				results.set(i+1, temp);
+			for (int i = 0; i < results.size() - 1; i++) {
+				if (results.get(i) > results.get(i + 1)) {
+					numSwaps++;
+					temp = results.get(i);
+					results.set(i, results.get(i + 1));
+					results.set(i + 1, temp);
+				}
 			}
-		}
 		}
 		System.out.println(results);
 		return results;
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	public static List<String> sortDNA(List<String> dna) {
+		String temp = "";
+		int numSwaps = 1;
+		while (numSwaps > 0) {
+			numSwaps = 0;
+			for (int i = 0; i < dna.size() - 1; i++) {
+				if (dna.get(i).length() > dna.get(i + 1).length()) {
+					numSwaps++;
+					temp = dna.get(i);
+					dna.set(i, dna.get(i + 1));
+					dna.set(i + 1, temp);
+				}
+			}
+		}
+		return dna;
 	}
 }
