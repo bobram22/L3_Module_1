@@ -95,4 +95,23 @@ public class Algorithms {
 		}
 		return dna;
 	}
+
+
+
+public static List<String> sortWords(List<String> Words) {
+	String temp = "";
+	int numSwaps = 1;
+	while (numSwaps > 0) {
+		numSwaps = 0;
+		for (int i = 0; i < Words.size() - 1; i++) {
+			if (0<Words.get(i).compareTo(Words.get(i+1))) {
+				numSwaps++;
+				temp = Words.get(i);
+				Words.set(i, Words.get(i + 1));
+				Words.set(i + 1, temp);
+			}
+		}
+	}
+	return Words;
+}
 }
